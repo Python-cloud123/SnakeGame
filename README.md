@@ -1,2 +1,2 @@
 # SnakeGame
-This project is based on car racing game using python
+This project is based on snake game using python
