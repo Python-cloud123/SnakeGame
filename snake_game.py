@@ -18,11 +18,11 @@ RED = (200, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
-# ---------------- GAME SETTINGS ----------------
+# ---------------- SETTINGS ----------------
 block = 10
 
 # 🐢 SLOW SPEED (lower = slower snake)
-speed = 8
+speed = 5
 
 font = pygame.font.SysFont("arial", 25)
 
@@ -75,9 +75,10 @@ def gameLoop():
 
         while game_close:
             screen.fill(BLACK)
-            draw_text("GAME OVER", RED, 240, 120)
-            draw_text("Press C to Play Again", WHITE, 180, 180)
+            draw_text("GAME OVER", RED, 230, 120)
+            draw_text("Press C to Restart", WHITE, 200, 180)
             draw_text("Press Q for Home", WHITE, 200, 220)
+
             pygame.display.update()
 
             for event in pygame.event.get():
@@ -109,16 +110,14 @@ def gameLoop():
                 elif event.key == pygame.K_DOWN:
                     dx = 0
                     dy = block
-
                 elif event.key == pygame.K_p:
                     paused = True
-
                 elif event.key == pygame.K_q:
                     return
 
         # ---------------- PAUSE ----------------
         while paused:
-            draw_text("PAUSED - Press R to Resume", BLUE, 140, 180)
+            draw_text("PAUSED - Press R to Resume", BLUE, 150, 180)
             pygame.display.update()
 
             for event in pygame.event.get():
